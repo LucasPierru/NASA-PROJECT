@@ -2,7 +2,7 @@ import {
   useState,
 } from "react";
 import {
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import {
@@ -69,7 +69,7 @@ const AppLayout = props => {
         style={{visibility: frameVisible ? "visible" : "hidden"}}>
         {anim => (
           <div style={{padding: "20px"}}>
-          <Switch>
+          <Routes>
             <Route exact path="/">
               <Launch 
                 entered={anim.entered}
@@ -93,7 +93,7 @@ const AppLayout = props => {
             <Route exact path="/history">
               <History entered={anim.entered} launches={launches} />
             </Route>
-          </Switch>
+          </Routes>
           </div>
         )}
       </Frame>
