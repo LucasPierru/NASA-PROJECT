@@ -70,29 +70,30 @@ const AppLayout = props => {
         {anim => (
           <div style={{padding: "20px"}}>
           <Routes>
-            <Route exact path="/">
-              <Launch 
-                entered={anim.entered}
-                planets={planets}
-                submitLaunch={submitLaunch}
-                isPendingLaunch={isPendingLaunch} />
-            </Route>
-            <Route exact path="/launch">
-              <Launch
-                entered={anim.entered}
-                planets={planets}
-                submitLaunch={submitLaunch}
-                isPendingLaunch={isPendingLaunch} />
-            </Route>
-            <Route exact path="/upcoming">
-              <Upcoming
-                entered={anim.entered}
-                launches={launches}
-                abortLaunch={abortLaunch} />
-            </Route>
-            <Route exact path="/history">
-              <History entered={anim.entered} launches={launches} />
-            </Route>
+            <Route 
+              path="/" 
+              element={<Launch 
+                          entered={anim.entered}
+                          planets={planets}
+                          submitLaunch={submitLaunch}
+                          isPendingLaunch={isPendingLaunch} />}
+            />
+            <Route 
+              path="/launch" 
+              element={<Launch
+                          entered={anim.entered}
+                          planets={planets}
+                          submitLaunch={submitLaunch}
+                          isPendingLaunch={isPendingLaunch} />}
+            />
+            <Route 
+              path="/upcoming" 
+              element={<Upcoming
+                          entered={anim.entered}
+                          launches={launches}
+                          abortLaunch={abortLaunch} />}
+            />    
+            <Route path="/history" element={<History entered={anim.entered} launches={launches} />}/>
           </Routes>
           </div>
         )}
